@@ -12,4 +12,4 @@ Example: `python main.py /Users/John/Photos`
 
 After that Timelapser ask you for the number of FPS and the video quality.
 
-And it's all. A video file are generated.
+And it's all. A video file is generated.
