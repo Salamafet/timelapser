@@ -14,7 +14,7 @@ def main():
 /_  __(_)_ _  ___ / /__ ____  ___ ___ ____
  / / / /  ' \/ -_) / _ `/ _ \(_-</ -_) __/
 /_/ /_/_/_/_/\__/_/\_,_/ .__/___/\__/_/   
-Alpha V0.4            /_/                 
+Alpha V0.5            /_/                 
 """)
 
 	try:
@@ -29,7 +29,11 @@ Alpha V0.4            /_/
 
 	if(len(liste_fichier) == 0):
 		print("No JPG file found")
-		exit()
+		if(input("Do you want include subfolder ? Y/N > ").lower() != "y"):
+			exit()
+		else:
+			liste_fichier = glob.glob('{}/**/*.JPG'.format(sys.argv[1]), recursive=True)
+			liste_fichier = sorted(liste_fichier)
 
 	# Create the out folder if doesn't exist
 	if(not path.exists("out")):
